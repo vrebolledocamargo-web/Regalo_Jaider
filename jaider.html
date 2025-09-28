@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Regalo virtual 🎁</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;       /* centra el texto horizontalmente */
+      display: flex;            /* activa flexbox */
+      flex-direction: column;   /* organiza en columna */
+      justify-content: center;  /* centra verticalmente */
+      align-items: center;      /* centra horizontalmente */
+      height: 100vh;            /* ocupa toda la altura de la pantalla */
+      margin: 0;                /* elimina márgenes */
+      background-color: #ffe4e1; /* color de fondo (puedes cambiarlo) */
+    }
+    #trollImg, #mensaje, #botonReal {
+      display: none;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>💌 Para ti con mucho cariño 💌</h1>
+  <p>Por ser un buen socio y un buen amigo TQM.
+ <h2>Haz clic para descubrir tu regalo 🎁</h2>
+  
+  <!-- Primer botón -->
+  <button onclick="mostrarTroll()">Descubrir regalo</button>
+  
+  <!-- Imagen troll -->
+  <div id="trollImg">
+    <img src="dog_fly.webp" alt="Troll" width="300">
+  </div>
+  
+  <!-- Mensaje -->
+  <div id="mensaje">
+    <p>😂 Es broma. Ahora sí, presiona aquí para descubrir tu regalo:</p>
+  </div>
+  
+  <!-- Botón real -->
+  <div id="botonReal">
+    <a href="dog_fly.webp" download="mi_regalo.stl">
+      <button>Descargar regalo 🎁</button>
+    </a>
+  </div>
+  
+  <script>
+    function mostrarTroll() {
+      document.querySelector("button").style.display = "none"; // Ocultar el primer botón
+      document.getElementById("trollImg").style.display = "block";
+      
+      setTimeout(() => {
+        document.getElementById("mensaje").style.display = "block";
+        document.getElementById("botonReal").style.display = "block";
+      }, 2000); // 2 segundos después aparece el mensaje y el botón real
+    }
+  </script>
+</body>
+</html>
